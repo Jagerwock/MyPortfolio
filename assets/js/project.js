@@ -1,6 +1,6 @@
 (() => {
-  const root = document.querySelector('#projectPage');
-  if (!root) return;
+  const page = document.querySelector('#projectPage');
+  if (!page) return;
 
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('slug');
@@ -23,35 +23,44 @@
     next: document.querySelector('#nextProject')
   };
 
-  fetch('assets/data/projects.json')
-    .then((r) => r.json())
-    .then((projects) => {
-      const i = projects.findIndex((p) => p.slug === slug);
-      if (i < 0) throw new Error('Project not found');
-      const p = projects[i];
-      html.title.textContent = p.title;
-      html.subtitle.textContent = p.shortDescription;
-      html.overview.textContent = p.sections.overview;
-      html.problem.textContent = p.sections.problem;
-      html.solution.textContent = p.sections.solution;
-      html.features.innerHTML = p.sections.features.map((x) => `<li>${x}</li>`).join('');
-      html.metrics.innerHTML = p.metrics.map((x) => `<li>${x}</li>`).join('');
-      html.results.innerHTML = p.sections.results.map((x) => `<li>${x}</li>`).join('');
-      html.architecture.innerHTML = p.sections.architecture.map((x) => `<li>${x}</li>`).join('');
-      html.stack.textContent = p.stack.join(', ');
-      html.role.textContent = p.role;
-      html.year.textContent = p.year;
-      html.gallery.innerHTML = p.gallery.map((g) => `<img src="${g}" alt="${p.title} gallery image">`).join('');
+  const setList = (element, items = []) => {
+    element.innerHTML = items.map((item) => `<li>${item}</li>`).join('');
+  };
 
-      const prev = projects[(i - 1 + projects.length) % projects.length];
-      const next = projects[(i + 1) % projects.length];
-      html.prev.href = `project.html?slug=${prev.slug}`;
+  fetch('assets/data/projects.json')
+    .then((response) => response.json())
+    .then((projects) => {
+      const index = projects.findIndex((project) => project.slug === slug);
+      if (index < 0) throw new Error('Project not found.');
+
+      const project = projects[index];
+      document.title = `${project.title} — Flavio Priano`;
+
+      html.title.textContent = project.title;
+      html.subtitle.textContent = project.shortDescription;
+      html.overview.textContent = project.sections.overview;
+      html.problem.textContent = project.sections.problem;
+      html.solution.textContent = project.sections.solution;
+      setList(html.features, project.sections.features);
+      setList(html.metrics, project.metrics || []);
+      setList(html.results, project.sections.results);
+      setList(html.architecture, project.sections.architecture);
+      html.stack.textContent = project.stack.join(', ');
+      html.role.textContent = project.role;
+      html.year.textContent = project.year;
+      html.gallery.innerHTML = project.gallery
+        .map((image, imageIndex) => `<img src="${image}" alt="${project.title} gallery image ${imageIndex + 1}">`)
+        .join('');
+
+      const prev = projects[(index - 1 + projects.length) % projects.length];
+      const next = projects[(index + 1) % projects.length];
+      html.prev.href = prev.caseStudy;
       html.prev.textContent = `← ${prev.title}`;
-      html.next.href = `project.html?slug=${next.slug}`;
+      html.next.href = next.caseStudy;
       html.next.textContent = `${next.title} →`;
     })
-    .catch((err) => {
-      root.innerHTML = `<div class="container section"><h1>Case study unavailable</h1><p>${err.message}</p></div>`;
+    .catch((error) => {
+      page.innerHTML = `<div class="container section"><h1>Case study unavailable</h1><p>${error.message}</p></div>`;
     });
 
   const metaToggle = document.querySelector('#metaToggle');

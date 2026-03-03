@@ -1,29 +1,58 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Work — Alex Mercer</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Flavio Priano</title>
+  <meta name="description" content="Selected websites and web apps by Flavio Priano. Filter by frontend, backend, full-stack, landing, e-commerce, dashboard, CMS and integrations.">
+  <meta property="og:title" content="Work — Flavio Priano">
+  <meta property="og:description" content="Portfolio projects focused 100% on websites and web applications.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="container nav-wrap"><a class="wordmark" href="index.html">Alex Mercer</a><nav class="nav-links" aria-label="Primary"><a data-nav-link href="work.html">Work</a><a data-nav-link href="about.html">About</a><a data-nav-link href="contact.html">Contact</a></nav><button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel">☰</button></div><nav id="mobilePanel" class="mobile-panel" aria-label="Mobile"><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="wordmark" href="index.html">Flavio Priano</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a data-nav-link href="work.html">Work</a>
+      <a data-nav-link href="about.html">About</a>
+      <a data-nav-link href="contact.html">Contact</a>
+    </nav>
+    <button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
+  </div>
+  <nav id="mobilePanel" class="mobile-panel" aria-label="Mobile">
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
 <main id="main" class="section">
   <div class="container reveal">
-    <div class="section-head"><p class="section-label">Work</p><h1>Projects</h1><p>Filter by focus area and explore individual case studies.</p></div>
-    <div class="filters" role="toolbar" aria-label="Project filters">
-      <button class="chip" aria-pressed="true" data-filter="All">All</button>
-      <button class="chip" aria-pressed="false" data-filter="Frontend">Frontend</button>
-      <button class="chip" aria-pressed="false" data-filter="Backend">Backend</button>
-      <button class="chip" aria-pressed="false" data-filter="Full-stack">Full-stack</button>
-      <button class="chip" aria-pressed="false" data-filter="E-commerce">E-commerce</button>
-      <button class="chip" aria-pressed="false" data-filter="Dashboard">Dashboard</button>
-      <button class="chip" aria-pressed="false" data-filter="CMS">CMS</button>
-      <button class="chip" aria-pressed="false" data-filter="Integrations">Integrations</button>
+    <div class="section-head">
+      <p class="section-label">Work</p>
+      <h1>Web projects</h1>
+      <p>Explore websites and web apps by focus area.</p>
     </div>
-    <div id="workGrid" class="grid works-grid"></div>
+    <div class="filters" role="toolbar" aria-label="Project filters">
+      <button class="chip" aria-pressed="true" data-filter="all">All</button>
+      <button class="chip" aria-pressed="false" data-filter="frontend">Frontend</button>
+      <button class="chip" aria-pressed="false" data-filter="backend">Backend</button>
+      <button class="chip" aria-pressed="false" data-filter="full-stack">Full-stack</button>
+      <button class="chip" aria-pressed="false" data-filter="landing">Landing</button>
+      <button class="chip" aria-pressed="false" data-filter="e-commerce">E-commerce</button>
+      <button class="chip" aria-pressed="false" data-filter="dashboard">Dashboard</button>
+      <button class="chip" aria-pressed="false" data-filter="cms">CMS</button>
+      <button class="chip" aria-pressed="false" data-filter="integrations">Integrations</button>
+    </div>
+    <p id="resultsCount" class="results-count">Showing 0 projects</p>
+    <div id="workGrid" class="grid works-grid" aria-live="polite"></div>
     <div id="emptyState" class="empty-state" hidden>No projects match this filter yet.</div>
   </div>
 </main>
 <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
-<footer class="site-footer"><div class="container">© 2026 Alex Mercer.</div></footer>
+<footer class="site-footer"><div class="container">© 2026 Flavio Priano — Web Developer.</div></footer>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/work.js"></script>
 </body>

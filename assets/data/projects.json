@@ -1,116 +1,102 @@
 [
   {
     "slug": "nova-commerce",
+    "caseStudy": "project.html?slug=nova-commerce",
     "title": "Nova Commerce",
     "year": "2026",
-    "shortDescription": "A conversion-focused e-commerce platform with real-time inventory and editorial product storytelling.",
+    "shortDescription": "E-commerce web app with modular storefront, optimized checkout and reliable payments.",
     "tags": ["Full-stack", "E-commerce", "Integrations"],
-    "stack": ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Redis"],
+    "stack": ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
     "role": "Lead Full-stack Developer",
-    "metrics": ["+38% checkout conversion", "-42% cart abandonment", "95 Lighthouse performance"],
+    "metrics": ["+32% conversion", "-41% checkout drop-off", "LCP 1.8s"],
     "sections": {
-      "overview": "Nova Commerce modernized an aging storefront into a fast, conversion-oriented shopping experience.",
-      "problem": "The previous store had slow product pages, inconsistent stock data, and fragile third-party scripts.",
-      "solution": "I designed a modular frontend, rebuilt API integrations, and introduced queue-based sync jobs for inventory.",
-      "architecture": ["SPA storefront connected to BFF API", "Stripe checkout webhooks update order state", "Redis cache for product and search responses", "Nightly ETL sync to warehouse analytics"],
-      "features": ["Editorial product blocks", "Smart filtering and search", "Region-aware pricing", "Customer account dashboard"],
-      "results": ["Revenue up 26% in 8 weeks", "Page speed improved from 4.8s to 1.7s", "Support tickets about stock issues dropped by 63%"]
+      "overview": "Nova Commerce is a premium storefront platform designed for fast browsing and frictionless conversion.",
+      "problem": "The previous site had low conversion and heavy templates that slowed down product exploration.",
+      "solution": "I rebuilt the storefront as a component-driven web app with fast product rendering and resilient checkout flows.",
+      "architecture": ["SSR storefront and API routes", "Order service with idempotent payment handling", "Webhook pipeline for fulfillment updates"],
+      "features": ["Smart filtering", "One-page checkout", "Inventory sync", "Automated transactional emails"],
+      "results": ["Conversion increased 32% in 12 weeks", "Drop-off at checkout reduced by 41%", "Fewer support tickets related to ordering"]
     },
-    "gallery": ["assets/img/project-1.svg", "assets/img/project-2.svg", "assets/img/project-3.svg"]
+    "gallery": ["assets/img/project-1.svg", "assets/img/project-1.svg", "assets/img/project-1.svg"]
   },
   {
     "slug": "pulse-analytics",
+    "caseStudy": "project.html?slug=pulse-analytics",
     "title": "Pulse Analytics",
     "year": "2025",
-    "shortDescription": "Operational dashboard for product, sales, and customer data with role-based views.",
-    "tags": ["Frontend", "Dashboard"],
-    "stack": ["React", "TypeScript", "D3", "REST API"],
+    "shortDescription": "SaaS analytics dashboard that centralizes KPIs with drill-down workflows.",
+    "tags": ["Frontend", "Dashboard", "Integrations"],
+    "stack": ["React", "TypeScript", "D3", "Node API"],
     "role": "Senior Frontend Engineer",
-    "metrics": ["-55% manual reporting time", "2.1M daily data points visualized", "99.9% uptime"],
+    "metrics": ["-58% reporting time", "+24 NPS points", "99.9% uptime"],
     "sections": {
-      "overview": "Pulse gives teams a shared view of business health with fast drill-down interactions.",
-      "problem": "Teams relied on static spreadsheets and weekly updates, causing slow decision cycles.",
-      "solution": "I built reusable visualization modules and introduced a design system for data-dense interfaces.",
-      "architecture": ["Client app consumes aggregated metrics endpoint", "Event stream ingested into time-series DB", "Server-side pre-aggregation for high-volume charts"],
-      "features": ["Custom date segmentation", "Saved views", "Export-ready reports", "Slack alert integration"],
-      "results": ["Decision cycle reduced from weekly to daily", "Onboarding time for analysts cut in half", "Leadership adopted dashboard as source of truth"]
+      "overview": "Pulse helps operations and leadership teams monitor business health in real time.",
+      "problem": "Teams used spreadsheets and disconnected reports, delaying decisions and creating data trust issues.",
+      "solution": "I designed a consistent dashboard UI and reusable chart modules backed by a performant aggregation API.",
+      "architecture": ["Client consumes aggregated endpoints", "Event ingestion to time-series storage", "Server-side pre-aggregation for chart performance"],
+      "features": ["Saved views", "Cohort analysis", "Role-based dashboards", "Slack alert integration"],
+      "results": ["Daily decision cadence replaced weekly reporting", "Onboarding for analysts reduced by half", "Leadership adopted one source of truth"]
     },
-    "gallery": ["assets/img/project-2.svg", "assets/img/project-4.svg", "assets/img/project-5.svg"]
+    "gallery": ["assets/img/project-1.svg", "assets/img/project-1.svg", "assets/img/project-1.svg"]
   },
   {
     "slug": "helios-cms",
+    "caseStudy": "project.html?slug=helios-cms",
     "title": "Helios CMS",
     "year": "2025",
-    "shortDescription": "Headless CMS implementation with multi-site publishing and content governance.",
+    "shortDescription": "Multi-site headless CMS web platform with governance and publishing controls.",
     "tags": ["Backend", "CMS", "Integrations"],
     "stack": ["Node.js", "Express", "MongoDB", "S3"],
     "role": "Backend Engineer",
-    "metrics": ["8 brand sites unified", "-70% publishing latency", "100% audit trail coverage"],
+    "metrics": ["8 sites unified", "-70% publishing latency", "100% audit trail"],
     "sections": {
-      "overview": "Helios brought fragmented content operations into one structured and scalable platform.",
-      "problem": "Editors managed content across disconnected tools without approval workflows.",
-      "solution": "I designed schema-driven APIs and a robust publish pipeline with role controls and revision history.",
-      "architecture": ["Content API serves multiple frontends", "Webhook-based publish triggers", "S3 stores media variants", "Granular RBAC at endpoint level"],
-      "features": ["Draft-preview flow", "Localization", "Scheduled publishing", "Asset optimization"],
-      "results": ["Editorial throughput doubled", "Zero accidental overwrites after launch", "Security review passed on first iteration"]
+      "overview": "Helios unified fragmented editorial workflows into one reliable CMS experience.",
+      "problem": "Content teams lacked approval workflows and had no consistent publishing model.",
+      "solution": "I created schema-driven APIs, revisions, and role permissions for secure multi-site publishing.",
+      "architecture": ["Headless content API for multiple frontends", "Webhook-driven publish pipeline", "RBAC enforced per endpoint"],
+      "features": ["Scheduled publishing", "Draft preview", "Localization support", "Media optimization"],
+      "results": ["Editorial throughput doubled", "Zero accidental overwrites after launch", "Security review passed first round"]
     },
-    "gallery": ["assets/img/project-3.svg", "assets/img/project-5.svg", "assets/img/project-6.svg"]
+    "gallery": ["assets/img/project-1.svg", "assets/img/project-1.svg", "assets/img/project-1.svg"]
   },
   {
     "slug": "harbor-bookings",
+    "caseStudy": "project.html?slug=harbor-bookings",
     "title": "Harbor Bookings",
     "year": "2024",
-    "shortDescription": "Full-stack booking platform with calendar sync and automated confirmations.",
-    "tags": ["Full-stack", "Integrations"],
+    "shortDescription": "Booking web app with real-time availability and automated confirmations.",
+    "tags": ["Full-stack", "Integrations", "Landing"],
     "stack": ["Vue", "Node.js", "PostgreSQL", "Google Calendar API"],
     "role": "Full-stack Engineer",
-    "metrics": ["+31% online bookings", "-48% scheduling conflicts", "<200ms API p95"],
+    "metrics": ["+31% online bookings", "-48% schedule conflicts", "API p95 <200ms"],
     "sections": {
-      "overview": "Harbor replaced a manual reservation process with a reliable self-service system.",
-      "problem": "Phone bookings and spreadsheet tracking caused double-bookings and delayed confirmations.",
-      "solution": "I built an availability engine, calendar sync workers, and a polished booking frontend.",
-      "architecture": ["Public booking UI calls reservation API", "Conflict checks run in transaction", "Calendar sync workers process async jobs"],
-      "features": ["Live availability", "Email confirmations", "Admin calendar", "Reschedule workflows"],
-      "results": ["Customer no-show rate dropped 18%", "Team handled 2.4x more reservations", "Positive feedback on booking UX increased significantly"]
+      "overview": "Harbor modernized reservations with self-service scheduling and reliable reminders.",
+      "problem": "Manual reservation management caused double-bookings and delayed responses.",
+      "solution": "I built the booking flow, availability engine and calendar sync workers for conflict-free scheduling.",
+      "architecture": ["Web client connected to reservation API", "Conflict checks inside DB transactions", "Async workers handle calendar synchronization"],
+      "features": ["Live calendar", "Automated emails", "Admin controls", "Reschedule flow"],
+      "results": ["Team handled 2.4x more reservations", "No-show rate dropped 18%", "Customer satisfaction improved"]
     },
-    "gallery": ["assets/img/project-4.svg", "assets/img/project-1.svg", "assets/img/project-6.svg"]
-  },
-  {
-    "slug": "atlas-ops",
-    "title": "Atlas Ops",
-    "year": "2024",
-    "shortDescription": "Internal operations suite for fulfillment and logistics teams.",
-    "tags": ["Backend", "Dashboard"],
-    "stack": ["Express", "MySQL", "Redis", "Docker"],
-    "role": "Backend & Platform Engineer",
-    "metrics": ["-34% fulfillment delays", "+22% picking efficiency", "99.95% service availability"],
-    "sections": {
-      "overview": "Atlas provides unified workflows for warehouse throughput and incident response.",
-      "problem": "Legacy tooling had fragmented status updates and lacked dependable APIs.",
-      "solution": "I created a service layer with queue-backed jobs, observability hooks, and resilient endpoints.",
-      "architecture": ["REST API with token auth", "Redis queue for heavy tasks", "MySQL read replicas for reporting", "Containerized deployment pipeline"],
-      "features": ["Task assignment engine", "SLA tracking", "Incident logging", "Webhook connector framework"],
-      "results": ["Incident recovery time reduced by 41%", "Ops team adopted real-time dashboard daily", "Weekly status reporting became fully automated"]
-    },
-    "gallery": ["assets/img/project-5.svg", "assets/img/project-2.svg", "assets/img/project-1.svg"]
+    "gallery": ["assets/img/project-1.svg", "assets/img/project-1.svg", "assets/img/project-1.svg"]
   },
   {
     "slug": "lumen-showcase",
+    "caseStudy": "project.html?slug=lumen-showcase",
     "title": "Lumen Showcase",
     "year": "2023",
-    "shortDescription": "Marketing website system with reusable blocks and A/B test hooks.",
-    "tags": ["Frontend", "CMS"],
+    "shortDescription": "Editorial landing system for campaigns with reusable blocks and SEO automation.",
+    "tags": ["Frontend", "Landing", "CMS"],
     "stack": ["HTML", "CSS", "Vanilla JS", "Contentful"],
     "role": "Frontend Developer",
-    "metrics": ["+44% time on page", "+21% demo requests", "Core Web Vitals all green"],
+    "metrics": ["+44% time on page", "+21% demo requests", "CWV all green"],
     "sections": {
-      "overview": "Lumen is a modular marketing platform for rapid campaign launches.",
-      "problem": "Campaign landing pages were hard-coded and expensive to update.",
-      "solution": "I introduced a block-based approach with consistent design tokens and content controls.",
-      "architecture": ["Static frontend reads CMS JSON payloads", "Experiment flags decide block variants", "Analytics collector forwards events to BI"],
-      "features": ["Block-level personalization", "A/B test support", "Reusable testimonial patterns", "SEO schema automation"],
-      "results": ["Marketing published 3x faster", "Performance remained stable across campaigns", "Design consistency improved across all pages"]
+      "overview": "Lumen enables marketing teams to launch consistent, high-performing campaign pages quickly.",
+      "problem": "Landing pages were hardcoded and expensive to maintain across launches.",
+      "solution": "I created a modular frontend architecture with CMS-driven block composition and analytics hooks.",
+      "architecture": ["Static frontend consumes CMS payloads", "Feature flags define block variants", "Analytics events sent to BI pipeline"],
+      "features": ["Reusable sections", "A/B experiment hooks", "SEO schema templates", "Content governance rules"],
+      "results": ["Publishing velocity tripled", "Performance stayed stable at scale", "Visual consistency improved across campaigns"]
     },
-    "gallery": ["assets/img/project-6.svg", "assets/img/project-3.svg", "assets/img/project-4.svg"]
+    "gallery": ["assets/img/project-1.svg", "assets/img/project-1.svg", "assets/img/project-1.svg"]
   }
 ]
