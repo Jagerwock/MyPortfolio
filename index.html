@@ -21,11 +21,8 @@
       </nav>
       <button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
     </div>
-    <nav id="mobilePanel" class="mobile-panel" aria-label="Mobile">
-      <a href="work.html">Work</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div id="mobileBackdrop" class="mobile-backdrop" aria-hidden="true"></div>
+    <nav id="mobilePanel" class="mobile-panel" aria-label="Mobile menu"></nav>
   </header>
 
   <main id="main">
@@ -56,9 +53,9 @@
           <h2>End-to-end web delivery without handoff gaps.</h2>
         </div>
         <div class="grid expertise-grid">
-          <article class="panel"><h3>Frontend Engineering</h3><p>Accessible interfaces, design systems, microinteractions and Core Web Vitals optimization.</p></article>
-          <article class="panel"><h3>Backend Engineering</h3><p>Robust APIs, auth, data modeling and integration architecture for web products.</p></article>
-          <article class="panel"><h3>Product Execution</h3><p>Clear scope, iterative delivery and measurable outcomes from discovery to launch.</p></article>
+          <article class="panel" data-process-step><h3>Frontend Engineering</h3><p>Accessible interfaces, design systems, microinteractions and Core Web Vitals optimization.</p></article>
+          <article class="panel" data-process-step><h3>Backend Engineering</h3><p>Robust APIs, auth, data modeling and integration architecture for web products.</p></article>
+          <article class="panel" data-process-step><h3>Product Execution</h3><p>Clear scope, iterative delivery and measurable outcomes from discovery to launch.</p></article>
         </div>
       </div>
     </section>
@@ -93,6 +90,10 @@
 
   <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
   <footer class="site-footer"><div class="container">© 2026 Flavio Priano — Web Developer.</div></footer>
-  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/nav.js" defer></script>
+<script src="assets/js/animations.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

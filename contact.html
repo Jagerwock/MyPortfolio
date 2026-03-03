@@ -21,11 +21,8 @@
     </nav>
     <button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
   </div>
-  <nav id="mobilePanel" class="mobile-panel" aria-label="Mobile">
-    <a href="work.html">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <div id="mobileBackdrop" class="mobile-backdrop" aria-hidden="true"></div>
+  <nav id="mobilePanel" class="mobile-panel" aria-label="Mobile menu"></nav>
 </header>
 <main id="main" class="section">
   <div class="container reveal">
@@ -54,6 +51,10 @@
 </main>
 <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 <footer class="site-footer"><div class="container">© 2026 Flavio Priano — Web Developer.</div></footer>
-<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/nav.js" defer></script>
+<script src="assets/js/animations.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

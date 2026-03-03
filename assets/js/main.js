@@ -1,103 +1,6 @@
 (() => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (selector, context = document) => context.querySelector(selector);
-  const $$ = (selector, context = document) => Array.from(context.querySelectorAll(selector));
-
-  const setActiveNav = () => {
-    const path = window.location.pathname.split('/').pop() || 'index.html';
-    $$('[data-nav-link], #mobilePanel a').forEach((link) => {
-      const isActive = link.getAttribute('href') === path;
-      link.classList.toggle('active', isActive);
-      if (isActive) {
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
-  };
-
-  const setupMobileMenu = () => {
-    const toggle = $('#mobileToggle');
-    const panel = $('#mobilePanel');
-    if (!toggle || !panel) return;
-
-    const focusableSelector = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
-    const closeMenu = () => {
-      panel.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-      toggle.focus();
-    };
-
-    const trapFocus = (event) => {
-      if (!panel.classList.contains('open') || event.key !== 'Tab') return;
-      const focusables = $$(focusableSelector, panel);
-      if (!focusables.length) return;
-
-      const first = focusables[0];
-      const last = focusables[focusables.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-
-    toggle.addEventListener('click', () => {
-      const open = !panel.classList.contains('open');
-      panel.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-      document.body.style.overflow = open ? 'hidden' : '';
-      if (open) {
-        const firstLink = panel.querySelector('a');
-        if (firstLink) firstLink.focus();
-      }
-    });
-
-    panel.addEventListener('click', (event) => {
-      if (event.target.matches('a')) closeMenu();
-    });
-
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && panel.classList.contains('open')) closeMenu();
-      trapFocus(event);
-    });
-  };
-
-  const setupReveal = () => {
-    const revealElements = $$('.reveal');
-    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-      revealElements.forEach((el) => el.classList.add('visible'));
-      return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealElements.forEach((el) => observer.observe(el));
-  };
-
-  const setupSmoothAnchorScroll = () => {
-    if (prefersReducedMotion) return;
-    $$('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', (event) => {
-        const href = anchor.getAttribute('href');
-        if (!href || href.length <= 1) return;
-        const target = document.querySelector(href);
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  };
 
   const setupBackToTop = () => {
     const button = $('#backToTop');
@@ -105,7 +8,7 @@
 
     window.addEventListener('scroll', () => {
       button.classList.toggle('show', window.scrollY > 520);
-    });
+    }, { passive: true });
 
     button.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
@@ -183,7 +86,7 @@
       const featured = projects.slice(0, 3);
 
       container.innerHTML = featured.map((project) => `
-        <article class="card reveal">
+        <article class="card reveal-card" data-animate="card">
           <a href="${project.caseStudy}">
             <div class="card-thumb">
               <img src="${project.gallery[0]}" alt="${project.title} preview">
@@ -198,16 +101,12 @@
         </article>
       `).join('');
 
-      setupReveal();
+      document.dispatchEvent(new CustomEvent('portfolio:content-updated', { detail: { scope: container } }));
     } catch {
       container.innerHTML = '<p>Projects are temporarily unavailable.</p>';
     }
   };
 
-  setActiveNav();
-  setupMobileMenu();
-  setupReveal();
-  setupSmoothAnchorScroll();
   setupBackToTop();
   setupContactForm();
   loadFeaturedProjects();

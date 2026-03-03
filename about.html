@@ -14,11 +14,8 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="wordmark" href="index.html">Flavio Priano</a>
-      <nav class="nav-links" aria-label="Primary">
-        <a data-nav-link href="work.html">Work</a>
-        <a data-nav-link href="about.html">About</a>
-        <a data-nav-link href="contact.html">Contact</a>
-      </nav>
+      <div id="mobileBackdrop" class="mobile-backdrop" aria-hidden="true"></div>
+    <nav id="mobilePanel" class="mobile-panel" aria-label="Mobile menu"></nav>
       <button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
     </div>
     <nav id="mobilePanel" class="mobile-panel" aria-label="Mobile">
@@ -35,15 +32,19 @@
       <p>I design and build websites and web applications that balance editorial clarity, smooth UX and production-grade engineering.</p>
       <p>My process blends product design thinking with frontend and backend execution to ship measurable business outcomes.</p>
       <div class="grid expertise-grid">
-        <article class="panel"><h3>UI / UX + Frontend</h3><p>Information hierarchy, interaction design, accessibility and CSS architecture that stays maintainable.</p></article>
-        <article class="panel"><h3>Backend + Integrations</h3><p>API design, data modeling, auth and third-party integrations aligned to product workflows.</p></article>
-        <article class="panel"><h3>Delivery</h3><p>Fast iteration, clear communication and quality standards from discovery to post-launch optimization.</p></article>
+        <article class="panel" data-process-step><h3>UI / UX + Frontend</h3><p>Information hierarchy, interaction design, accessibility and CSS architecture that stays maintainable.</p></article>
+        <article class="panel" data-process-step><h3>Backend + Integrations</h3><p>API design, data modeling, auth and third-party integrations aligned to product workflows.</p></article>
+        <article class="panel" data-process-step><h3>Delivery</h3><p>Fast iteration, clear communication and quality standards from discovery to post-launch optimization.</p></article>
       </div>
     </div>
   </main>
 
   <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
   <footer class="site-footer"><div class="container">© 2026 Flavio Priano — Web Developer.</div></footer>
-  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/nav.js" defer></script>
+<script src="assets/js/animations.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
