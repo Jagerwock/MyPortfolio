@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Project Case Study</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav-wrap"><a class="wordmark" href="index.html">Alex Mercer</a><nav class="nav-links" aria-label="Primary"><a data-nav-link href="work.html">Work</a><a data-nav-link href="about.html">About</a><a data-nav-link href="contact.html">Contact</a></nav><button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel">☰</button></div><nav id="mobilePanel" class="mobile-panel" aria-label="Mobile"><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+
+<main id="main">
+  <section class="section" id="projectPage">
+    <div class="container reveal">
+      <p class="section-label">Case Study</p>
+      <h1 id="projectTitle">Loading project...</h1>
+      <p id="projectSubtitle"></p>
+      <div class="project-layout">
+        <aside class="panel project-meta">
+          <button id="metaToggle" class="btn meta-toggle" aria-expanded="true">Project Meta</button>
+          <div id="metaContent" class="meta-content">
+            <p><strong>Year:</strong> <span id="metaYear"></span></p>
+            <p><strong>Role:</strong> <span id="metaRole"></span></p>
+            <p><strong>Stack:</strong> <span id="metaStack"></span></p>
+            <ul id="metricList"></ul>
+          </div>
+        </aside>
+        <article class="grid">
+          <section class="panel"><h2>Overview</h2><p id="overview"></p></section>
+          <section class="panel"><h2>Problem</h2><p id="problem"></p></section>
+          <section class="panel"><h2>Solution</h2><p id="solution"></p></section>
+          <section class="panel"><h2>Architecture</h2><ul id="architectureList"></ul><div class="arch-diagram"><div class="node">Frontend</div><div class="arrow">↓ API calls</div><div class="node">Node / Express API</div><div class="arrow">↓ data access</div><div class="node">Database + External Services</div></div></section>
+          <section class="panel"><h2>Key Features</h2><ul id="featureList"></ul></section>
+          <section class="panel"><h2>Results</h2><ul id="resultList"></ul></section>
+          <section class="panel"><h2>Gallery</h2><div id="galleryGrid" class="gallery"></div></section>
+          <nav class="cta-row" aria-label="Next and previous project"><a id="prevProject" class="btn" href="#"></a><a id="nextProject" class="btn" href="#"></a></nav>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+<footer class="site-footer"><div class="container">© 2026 Alex Mercer.</div></footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/project.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Work — Alex Mercer</title><link rel="stylesheet" href="assets/css/styles.css"></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav-wrap"><a class="wordmark" href="index.html">Alex Mercer</a><nav class="nav-links" aria-label="Primary"><a data-nav-link href="work.html">Work</a><a data-nav-link href="about.html">About</a><a data-nav-link href="contact.html">Contact</a></nav><button id="mobileToggle" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel">☰</button></div><nav id="mobilePanel" class="mobile-panel" aria-label="Mobile"><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></header>
+
+<main id="main" class="section">
+  <div class="container reveal">
+    <div class="section-head"><p class="section-label">Work</p><h1>Projects</h1><p>Filter by focus area and explore individual case studies.</p></div>
+    <div class="filters" role="toolbar" aria-label="Project filters">
+      <button class="chip" aria-pressed="true" data-filter="All">All</button>
+      <button class="chip" aria-pressed="false" data-filter="Frontend">Frontend</button>
+      <button class="chip" aria-pressed="false" data-filter="Backend">Backend</button>
+      <button class="chip" aria-pressed="false" data-filter="Full-stack">Full-stack</button>
+      <button class="chip" aria-pressed="false" data-filter="E-commerce">E-commerce</button>
+      <button class="chip" aria-pressed="false" data-filter="Dashboard">Dashboard</button>
+      <button class="chip" aria-pressed="false" data-filter="CMS">CMS</button>
+      <button class="chip" aria-pressed="false" data-filter="Integrations">Integrations</button>
+    </div>
+    <div id="workGrid" class="grid works-grid"></div>
+    <div id="emptyState" class="empty-state" hidden>No projects match this filter yet.</div>
+  </div>
+</main>
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+<footer class="site-footer"><div class="container">© 2026 Alex Mercer.</div></footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/work.js"></script>
+</body>
+</html>
